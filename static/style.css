@@ -1,0 +1,187 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eafaf1; /* Light green background */
+    color: #333;
+    text-align: center;
+}
+
+h1 {
+    padding: 20px;
+    background: #222;
+    color: #fff;
+    margin: 0;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.options, .book-list {
+    margin: 30px auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.options a, .back-button {
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745; /* Green button */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.options a:hover, .back-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px);
+}
+
+.book-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    overflow: hidden;
+}
+
+.book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f0f8f4; /* Light green shade */
+}
+
+.book-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
+
+.book-card p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+    line-height: 1.5;
+}
+
+form {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+input, button {
+    padding: 10px;
+    width: 90%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px);
+}
+
+.message {
+    margin-top: 20px;
+    font-weight: bold;
+    color: green;
+    font-size: 1.1em;
+}
+
+.header {
+    background-color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navigation a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navigation a:hover {
+    color: #28a745; /* Green hover effect */
+}
+
+.book-item {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 280px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    overflow: hidden;
+}
+
+.book-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.book-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f0f8f4; /* Light green shade */
+}
+
+.book-item h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: #333;
+    font-weight: bold;
+}
+
+.book-item p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 5px 0;
+    line-height: 1.5;
+}

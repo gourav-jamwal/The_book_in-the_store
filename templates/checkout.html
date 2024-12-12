@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Your Bag</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <h1>Your Bag</h1>
+    <div class="checkout-summary">
+        {% if actions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Action</th>
+                    <th>Details</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for action in actions %}
+                <tr>
+                    <td>{{ action.action }}</td>
+                    <td>{{ action.details }}</td>
+                    <td>${{ "%.2f"|format(action.amount) }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h3>Total Amount: ${{ "%.2f"|format(total_amount) }}</h3>
+        {% if total_amount > 0 %}
+        <p>You need to pay: ${{ "%.2f"|format(total_amount) }}</p>
+        {% elif total_amount < 0 %}
+        <p>You will receive: ${{ "%.2f"|format(-total_amount) }}</p>
+        {% else %}
+        <p>No amount to pay or receive.</p>
+        {% endif %}
+        {% else %}
+        <p>Your bag is empty.</p>
+        {% endif %}
+    </div>
+    <a class="back-button" href="/">Back to Main Menu</a>
+</body>
+</html>

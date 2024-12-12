@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Buy Books</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <h3>Buy Books</h3>
+    <div class="book-list">
+        {% for book in books %}
+        <div class="book-card">
+            <img src="/static/images/{{ book.image }}" alt="{{ book.name }}">
+            <h3>{{ book.name }}</h3>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>Genre:</strong> {{ book.genre }}</p>
+            <p><strong>Price:</strong> {{ book.price }}</p>
+            <p><strong>Ratings:</strong> {{ book.ratings }}</p>
+            <p><strong>Edition:</strong> {{ book.edition }}</p>
+            <form method="POST">
+                <input type="hidden" name="book_name" value="{{ book.name }}">
+                <input type="hidden" name="book_price" value="{{ book.price.strip('$') }}">
+                <button type="submit">Buy Now</button>
+            </form>
+            
+        </div>
+        {% endfor %}
+    </div>
+    <a class="back-button" href="/">Back to Main Menu</a>
+</body>
+</html>

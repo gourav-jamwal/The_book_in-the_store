@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Exchange Books</title>
+</head>
+<body>
+    {% include 'header.html' %}
+    <h3>Exchange a Book</h3>
+    <form method="POST">
+        <label for="name">Your Book Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required>
+        <label for="genre">Genre:</label>
+        <input type="text" id="genre" name="genre" required>
+        <label for="price">Price ($):</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+        <button type="submit">Submit</button>
+    </form>
+    {% if exchange_book %}
+    <div class="exchange-result">
+        <h3>We suggest exchanging your book for:</h3>
+        <div class="book-card">
+            <img src="/static/images/{{ exchange_book.image }}" alt="{{ exchange_book.name }}">
+            <h3>{{ exchange_book.name }}</h3>
+            <p><strong>Author:</strong> {{ exchange_book.author }}</p>
+            <p><strong>Genre:</strong> {{ exchange_book.genre }}</p>
+            <p><strong>Price:</strong> {{ exchange_book.price }}</p>
+            <p><strong>Ratings:</strong> {{ exchange_book.ratings }}</p>
+            <p><strong>Edition:</strong> {{ exchange_book.edition }}</p>
+        </div>
+    </div>
+    {% endif %}
+    <a class="back-button" href="/">Back to Main Menu</a>
+</body>
+</html>
